@@ -9,7 +9,8 @@ public class Main {
         double hamburger = 12.99;
         double fries = 4.99;
         double soda = 2.99;
-        double total;
+        double total = 0;
+        char currency = '€';
 
         //QUANTITÁ
         int quantity1 = 0;
@@ -21,6 +22,7 @@ public class Main {
         boolean soda1;
         int code;
         code = random.nextInt(1, 99);
+
 
         System.out.println("Hello and welcome to the Krusty Krab, here's the menu:\nHamburger: 12.99 \nFries: 4.99 \nSoda: 2.99 ");
 
@@ -36,7 +38,7 @@ public class Main {
             System.out.print("and how many?: ");
             quantity2 = scanner.nextInt();
         } else {
-            System.out.println("ok");
+            System.out.print("ok ");
         }
 
         System.out.print("would you like a soda? (ture/false): ");
@@ -46,7 +48,7 @@ public class Main {
             quantity3 = scanner.nextInt();
         }
         else {
-            System.out.println("Perfect, thank you for your order your number is: " + code) ;
+            System.out.println() ;
         }
 
         scanner.close();
@@ -58,7 +60,7 @@ public class Main {
 
         total = hamburgerTotal + friesTotal + sodaTotal;
 
-        System.out.println("\nYour total is: " + total + " and your number is: " + code);
+        System.out.println("\nGreat thank's for your order,\nthe total is: " + total + currency + "\nand your number is: " + code);
 
     }
 }
