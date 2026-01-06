@@ -12,7 +12,7 @@ public class Main {
         double total;
 
         //QUANTITÁ
-        int quantity1 ;
+        int quantity1 = 0;
         int quantity2 = 0;
         int quantity3 = 0;
 
