@@ -62,5 +62,7 @@ public class Main {
 
         System.out.println("\nGreat thank's for your order,\nthe total is: " + total + currency + "\nand your number is: " + code);
 
+        // test 2
+
     }
 }
