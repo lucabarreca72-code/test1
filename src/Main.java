@@ -1,4 +1,3 @@
-import java.math.MathContext;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,19 +6,19 @@ public class Main {
         Random random = new Random();
 
         // PRICES
-        double hamburger = 12.99;
-        double fries = 4.99;
-        double soda = 2.99;
+        double hamburgerPrice = 12.99;
+        double friesPrice = 4.99;
+        double sodaPrice = 2.99;
         double total = 0;
 
         //QUANTITY
-        int quantity1 = 0;
-        int quantity2 = 0;
-        int quantity3 = 0;
+        int hamburgerQuantity = 0;
+        int friesQuantity = 0;
+        int sodaQuantity = 0;
 
         //OPTIONS
-        boolean fries1;
-        boolean soda1;
+        boolean ifFries;
+        boolean ifSoda;
         int code;
         code = random.nextInt(1, 99);
 
@@ -28,23 +27,24 @@ public class Main {
         System.out.println("Hello and welcome to the Krusty Krab, here's the menu:\nHamburger: 12.99 \nFries: 4.99 \nSoda: 2.99 ");
 
         System.out.print("So how many hamburgers would you like? (if none enter 0): ");
-        quantity1 = scanner.nextInt();
+        hamburgerQuantity = scanner.nextInt();
 
         System.out.print("Would you like some fries with it? (true/false): ");
-        fries1 = scanner.nextBoolean();
+        ifFries = scanner.nextBoolean();
 
-        if(fries1) {
+        if(ifFries) {
             System.out.print("and how many?: ");
-            quantity2 = scanner.nextInt();
-        } else {
+            friesQuantity = scanner.nextInt();
+        }
+        else {
             System.out.print("ok ");
         }
 
         System.out.print("would you like a soda? (ture/false): ");
-        soda1 = scanner.nextBoolean();
-        if (soda1){
+        ifSoda = scanner.nextBoolean();
+        if(ifSoda){
             System.out.print("how many? ");
-            quantity3 = scanner.nextInt();
+            sodaQuantity = scanner.nextInt();
         }
         else {
             System.out.println();
@@ -53,20 +53,20 @@ public class Main {
         scanner.close();
 
         //QUANTITY TOTAL
-        double hamburgerTotal = hamburger * quantity1;
-        double friesTotal = fries * quantity2;
-        double sodaTotal = soda * quantity3;
+        double hamburgerTotal = hamburgerPrice * hamburgerQuantity;
+        double friesTotal = friesPrice * friesQuantity;
+        double sodaTotal = sodaPrice * sodaQuantity;
         total = hamburgerTotal + friesTotal + sodaTotal;
-        double discount = (total * 15) / 100;
-        double total2 = total - discount;
 
         if (total > 20.99){
-            System.out.printf("Wow so lucky, you got a %.2f€ discount, \nyour total is: %.2f€ \nand this is your order number: %d", discount, total2, code);
+            System.out.printf("Wow so lucky, you got a 15% discount, \nyour total is: %.2f€ \nand this is your order number: %d",total, code);
+            total *= 0.15;
         }
         else {
             System.out.printf("Great thank's for your order,\nthe total is: %.2f€ \nand this is your order number: %d", total, code);
         }
 
+        //riga 62, capire come mettere % e farlo riconoscere come carattere normale
 
     }
 }
