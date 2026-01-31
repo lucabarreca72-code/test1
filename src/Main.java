@@ -9,6 +9,10 @@ public class Main {
         double friesPrice = 4.99;
         double sodaPrice = 2.99;
 
+        // QUANTITY
+        int friesQuantity = 0;
+        int sodaQuantity = 0;
+
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
@@ -27,16 +31,24 @@ public class Main {
         System.out.print("Would you like some fries with it? (true/false): ");
         boolean wantsFries = scanner.nextBoolean();
 
-        String fries = (wantsFries) ?  "How many? " : "enter 0 pls: ";
-        System.out.print(fries);
-        int friesQuantity = scanner.nextInt();
+        if (wantsFries){
+            System.out.print("How many? ");
+            friesQuantity = scanner.nextInt();
+        }
+        else {
+            System.out.println("Ok");
+        }
 
         System.out.print("would you like a soda? (true/false): ");
         boolean wantsSoda = scanner.nextBoolean();
 
-        String soda = (wantsSoda) ? "How many? " : "enter 0 pls: ";
-        System.out.print(soda);
-        int sodaQuantity = scanner.nextInt();
+        if (wantsSoda){
+            System.out.print("How many? ");
+            sodaQuantity = scanner.nextInt();
+        }
+        else {
+            System.out.println("ok");
+        }
 
         //QUANTITY TOTAL
          double total = hamburgerQuantity * hamburgerPrice +
@@ -45,7 +57,7 @@ public class Main {
 
         if (total > 20.99){
             total *= (1- 0.15);
-            System.out.println("Wow so lucky, you got a 15% discount!");
+            System.out.println("\nWow so lucky, you got a 15% discount!");
         }
 
         System.out.printf("Total: %.2f€ \nOrder number: %d",
@@ -57,4 +69,4 @@ public class Main {
     }
 }
 
-// TROVARE SOLUZIONE A "ENTER 0 PLS"
+// TROVARE SOLUZIONE A "ENTER 0 PLS", rinunciato al ternary operator e optato a if else statements.
